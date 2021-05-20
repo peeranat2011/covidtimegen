@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-function PatientCard() {
+function PatientCard({returnData}) {
 
     const [patientData, setPatientData] = useState({});
 
     function handleOnChange({ target }) {
         const data = patientData;
         setPatientData({ ...data,[target.name]: target.value });
-
+        returnData('patient',patientData);
     }
     return (
         <div>
