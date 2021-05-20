@@ -9,7 +9,8 @@ function App() {
       <Row>
         <Col sm={5}>ข้อมูลผู้ป่วย 
           <PatientCard /> input 1 1 time Onchange
-          <PatientCard /> input 2 Dynamic
+          
+          {/* <PatientCard /> input 2 Dynamic */}
         </Col>
         <Col sm={7}>Timeline
           <DisplayCard /> output
