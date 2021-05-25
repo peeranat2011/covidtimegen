@@ -1,38 +1,211 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+body>#root>div {
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: 'Prompt', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.timeline {
+    border-left: 2px dotted #ffffff;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    /* background: rgb(35, 72, 114); */
+    margin: 0 auto;
+    letter-spacing: 0.2px;
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    padding: 9px 12px 30px 30px;
+    list-style: none;
+    text-align: left;
+    max-width: 80%;
+    /* margin-bottom: 30px; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (max-width: 767px) {
+    .timeline {
+        max-width: 98%;
+        padding: 25px;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+.timeline .event {
+    border-bottom: 1px dashed #e8ebf1;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 767px) {
+    .timeline .event {
+        padding-top: 30px;
+    }
+}
+
+.timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .event:before, .timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .event:before {
+    color: rgb(255, 193, 7);
+    left: -170px;
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+    min-width: 120px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:before {
+        left: 0px;
+        text-align: left;
+    }
+}
+
+.timeline .event:after {
+    -webkit-box-shadow: 0 0 0 1px #ffffff;
+    box-shadow: 0 0 0 1px #ffffff;
+    left: -35.8px;
+    background: #ffc107;
+    border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    content: "";
+    top: 7px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:after {
+        left: -31.8px;
+    }
+}
+
+.fade-out-right {
+    animation: fade-out-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    display: none;
+}
+
+@keyframes fade-out-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.patient_header {
+    color: #2c7d64;
+    font-size: 19px;
+    font-weight: bold;
+    padding-top: 2%;
+}
+
+.input_container {
+    background-color: rgb(35, 72, 114);
+    border-radius: 5px;
+}
+
+label {
+    color: white;
+}
+
+input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 0px;
+    border-color: rgba(255, 193, 7, 0);
+}
+
+.gender_option {
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 0px;
+}
+
+.input_detailed {
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 0px 20%;
+    overflow-wrap: break-word;
+}
+
+.adding_button {
+    background-color: rgb(255, 193, 7);
+    border-radius: 6px;
+    padding: 1% 2%;
+    border-color: rgba(255, 193, 7, 0);
+}
+
+.app_container {
+    background-color: #012d5e;
+}
+
+.topic {
+    font-size: 26px;
+    color: rgb(255, 193, 7);
+    font-weight: bold;
+}
+
+li {
+    color: white;
+}
+
+.dis_patient_con {
+    background-color: rgb(255, 193, 7);
+    border-radius: 60px;
+    padding: 16px 0px 1px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 4%;
+}
+
+.detailed_cointainer {
+    background: rgb(35, 72, 114);
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    border-radius: 0px 0px 2px 2px;
+}
+
+@media screen and (min-width: 767px) {
+    .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 6px;
+        width: 0;
+        z-index: 1;
+        left: -5px;
+        border: medium solid #234971;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #234971 transparent transparent;
+    }
 }
