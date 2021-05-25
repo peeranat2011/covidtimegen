@@ -5,29 +5,45 @@ import PatientCard from './components/patientCard';
 import DisplayCard from './components/displayCard';
 function App() {
   const [inputData, setInputData] = useState();
-  const [storePatientInfo, setStorePatientInfo] = useState();
+  const [storePatientInfo, setStorePatientInfo] = useState({});
+  const [storeTimeLineInfo, setTimeLineInfo] = useState([]);
 
-  function getData(key, value) {
+
+  function getPatientData(key, value) {
     const data = inputData;
-    setInputData({ ...data, [key]: value });
-    if (key == 'patient') {
-      setStorePatientInfo(value);
-    }
+    setInputData({ ...data });
+    setStorePatientInfo(value);
+  }
+
+  function getTimeLinetData(key, value) {
+    const data = inputData;
+    setInputData({ ...data });
+    setTimeLineInfo(value);
   }
 
 
+  const callbackDelete = (id) => {
+    const tempArray = storeTimeLineInfo;
+    tempArray.splice(
+      tempArray.findIndex((v) => v.id === id),
+      1
+    );
+    setTimeLineInfo(tempArray);
+  };
+
   return (
-    <Container>
-      <Row>
-        <Col sm={5}>ข้อมูลผู้ป่วย
-          <PatientCard returnData={getData} />
-          {/* <PatientCard /> input 2 Dynamic */}
-        </Col>
-        <Col sm={7}>Timeline
-          <DisplayCard patientData={storePatientInfo} /> output
-        </Col>
-      </Row>
-    </Container>
+      <div class="container-fluid app_container">
+        <label class="topic">COVID Timeline Generator</label>
+        <div class="row">
+          <div class="col-sm-5">
+            <PatientCard returnPatientData={getPatientData} returnTimeLineData={getTimeLinetData} />
+
+          </div>
+          <div div class="col-sm-7 app_container" style={{ border: "1px solid #ffc107"}}>
+            <DisplayCard patientData={storePatientInfo} timeLineData={storeTimeLineInfo} onDelete={callbackDelete} />
+          </div>
+        </div>
+      </div>
   );
 }
 
