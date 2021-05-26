@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/covidtimegen/static/css/main.0032fce1.chunk.css",
+    "main.js": "/covidtimegen/static/js/main.012db9c1.chunk.js",
+    "main.js.map": "/covidtimegen/static/js/main.012db9c1.chunk.js.map",
+    "runtime-main.js": "/covidtimegen/static/js/runtime-main.86689611.js",
+    "runtime-main.js.map": "/covidtimegen/static/js/runtime-main.86689611.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/covidtimegen/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.37cc1a4e.chunk.js": "/covidtimegen/static/js/2.37cc1a4e.chunk.js",
+    "static/js/2.37cc1a4e.chunk.js.map": "/covidtimegen/static/js/2.37cc1a4e.chunk.js.map",
+    "static/js/3.fc764b4c.chunk.js": "/covidtimegen/static/js/3.fc764b4c.chunk.js",
+    "static/js/3.fc764b4c.chunk.js.map": "/covidtimegen/static/js/3.fc764b4c.chunk.js.map",
+    "index.html": "/covidtimegen/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/covidtimegen/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.0032fce1.chunk.css.map": "/covidtimegen/static/css/main.0032fce1.chunk.css.map",
+    "static/js/2.37cc1a4e.chunk.js.LICENSE.txt": "/covidtimegen/static/js/2.37cc1a4e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.86689611.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.37cc1a4e.chunk.js",
+    "static/css/main.0032fce1.chunk.css",
+    "static/js/main.012db9c1.chunk.js"
+  ]
+}
